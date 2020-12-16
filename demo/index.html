@@ -1,0 +1,373 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>我的安装</title>
+<style>
+body {
+font-family: Tahoma;
+font-size: 10pt;
+line-height: 170%;
+padding: 0 10pt;
+}
+
+nav {
+background: gray;
+color: white;
+overflow-x: hidden;
+overflow-y: auto;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+width: 200px;
+}
+
+header {
+padding-left: 200px;
+}
+
+article {
+padding-left: 200px;
+}
+
+footer {
+padding-left: 200px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1 id="-">天书</h1>
+<p>想用<code>markdown</code>编写带索引的单页结构HTML文档的话，可以试试天书。</p>
+
+</header>
+<nav>
+<ul>
+<li class="level4"><a href="#0.0.1">Git简介：</a></li><li class="level4"><a href="#0.0.2">背景故事：</a></li><li class="level3"><a href="#0.1">使用</a></li><li class="level4"><a href="#0.1.1">集中式版本控制软件</a></li><li class="level4"><a href="#0.1.2">分布式版本控制软件</a></li><li class="level4"><a href="#0.1.3">工作区</a></li><li class="level4"><a href="#0.1.4">版本库</a></li><li class="level4"><a href="#0.1.5">暂存区</a></li><li class="level4"><a href="#0.1.6">分支</a></li><li class="level4"><a href="#0.1.7">创建版本库</a></li><li class="level4"><a href="#0.1.8">常用命令</a></li><li class="level5"><a href="#0.1.8.1">文件添加操作</a></li><li class="level4"><a href="#0.1.9">文件删除操作</a></li><li class="level4"><a href="#0.1.10">文件修改操作</a></li><li class="level4"><a href="#0.1.11">文件撤销操作</a></li><li class="level4"><a href="#0.1.12">分支定义</a></li><li class="level4"><a href="#0.1.13">分支操作</a></li><li class="level4"><a href="#0.1.14">合并分支解决冲突</a></li><li class="level4"><a href="#0.1.15">远程库</a></li><li class="level4"><a href="#0.1.16">本地库</a></li><li class="level4"><a href="#0.1.17">使用说明</a></li><li class="level4"><a href="#0.1.18">本地库 关联 远程库</a></li><li class="level4"><a href="#0.1.19">上传数据到远程库</a></li><li class="level4"><a href="#0.1.20">远程库更新本地库</a></li><li class="level4"><a href="#0.1.21">成功将本地库内容上传到远程库</a></li><li class="level4"><a href="#0.1.22">注意事项</a></li><li class="level4"><a href="#0.1.23">查看远程库信息</a></li><li class="level4"><a href="#0.1.24">删除连接远程库</a></li><li class="level4"><a href="#0.1.25">从远程库下载源码到本地库</a></li><li class="level4"><a href="#0.1.26">多人协作开发实现步骤</a></li><li class="level4"><a href="#0.1.27">本地库连接远程库</a></li><li class="level3"><a href="#0.2">开源协议</a></li></ul>
+
+</nav>
+<article>
+<h4 id="0.0.1">Git简介：</h4>
+<pre><code>Git是一个分布式版本控制软件。</code></pre>
+<h4 id="0.0.2">背景故事：</h4>
+<pre><code>Linus在1991年创建了开源的Linux。
+
+在2002年以前：世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后Linus本人通过手工方式合并代码。
+
+2002年-2004年：（商用版本控制软件）BitKeeper的东家BitMover公司授权Linux社区免费使用这个版本控制系统。
+
+2005年：Linus花了两周时间自己用C写了git（一个分布式版本控制软件）。
+
+2008年：GitHub网站上线了，它为开源项目免费提供Git存储。</code></pre>
+
+<h3 id="0.1">使用</h3>
+<p>首先参考<code>demo/</code>目录，使用<code>markdown</code>编写一些章节文件（位于<code>demo/section/</code>），并使用<code>HTML</code>编写好页面模板文件（位于<code>demo/index.tpl</code>）。在模板文件中，使用<code>x-markdown</code>标签引用<code>.md</code>文件，并使用<code>x-index</code>标签指定索引输出位置。</p>
+<p>准备好所有文件后，使用以下命令将模板文件编译为HTML文件。</p>
+<blockquote>
+<p>   tianshu index.tpl</p>
+</blockquote>
+<p>如果希望生成的<code>index.html</code>好看一些，可以在<code>index.tpl</code>里写一些CSS。</p>
+
+<h4 id="0.1.1">集中式版本控制软件</h4>
+<ol>
+<li>集中式代表：SVN</li>
+<li>集中式特点：<ol>
+<li>版本库是集中存放在中央服务器的。</li>
+<li>必须实时联网才能工作。</li>
+</ol>
+</li>
+</ol>
+<h4 id="0.1.2">分布式版本控制软件</h4>
+<ol>
+<li>分布式代表：Git</li>
+<li>分布式特点：<ol>
+<li>个人电脑都可以作为版本库。</li>
+<li>速度快，使用简单。</li>
+<li>不必实时联网。</li>
+</ol>
+</li>
+</ol>
+
+<x-markdown src="section/3_Git下载和安装.md />
+<h4 id="0.1.3">工作区</h4>
+<pre><code>存放源码的文件夹。</code></pre>
+<h4 id="0.1.4">版本库</h4>
+<pre><code>版本库又名仓库，英文名repository。
+这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪。
+以便任何时刻都可以追踪历史，或者在将来某个时刻可以&quot;还原&quot;。
+
+通过&quot;git init&quot;命令创建。&quot;.git&quot;隐藏目录就是版本库。</code></pre>
+<h4 id="0.1.5">暂存区</h4>
+<pre><code>&quot;.git&quot;目录下有一个&quot;index&quot;/&quot;stage&quot;的文件即暂存区。</code></pre>
+<h4 id="0.1.6">分支</h4>
+<pre><code>默认情况下，Git会自动为我们创建一个主分支（master）。
+&quot;.git&quot;下有个名为&quot;HEAD&quot;的文件指向master分支。
+最新版本代码需要更新到&quot;当前分支&quot;。</code></pre>
+
+<h4 id="0.1.7">创建版本库</h4>
+<pre><code>
+# 创建文件夹
+    $ mkdir test
+
+# 进入当前目录
+    $ cd test
+
+# 查看目录
+    $ pwd
+
+# 将当前目录变成Git可管理的版本库又名仓库，英文名repository
+    $ git init
+    Initialized empty Git repository in D:/Tools/Git/test/.git/</code></pre>
+
+<h4 id="0.1.8">常用命令</h4>
+<h5 id="0.1.8.1">文件添加操作</h5>
+<pre><code># 1. 工作区中创建新文件hello.py
+    $ vi hello.py
+
+# 2. 查看文件状态
+    $ git status
+
+# 3. 将源码拷贝到暂存区
+    $ git add hello.py
+
+# 4. 将暂存区移动到当前分支
+    $ git commit -m &quot;创建新文件hello.py&quot;
+
+# 5. 查看状态
+    $ git status
+    On branch master
+    nothing to commit, working tree clean</code></pre>
+<h4 id="0.1.9">文件删除操作</h4>
+<pre><code># 1. 删除工作区中的文件
+    rm hello.py 
+
+# 2. 删除暂存区中的文件
+    git rm hello.py
+
+# 3. 删除当前分支中的文件
+    git commit -m &#39;描述信息&#39;</code></pre>
+<h4 id="0.1.10">文件修改操作</h4>
+<pre><code># 修改文件
+    $ vi hello.py
+
+# 查看状态
+    $ git status
+
+# 添加暂存区
+    $ git add hello.py
+
+# 添加版本库
+    $ git commit -m &#39;描述信息&#39;
+
+
+# 添加并提交到分支中
+    $ git commit -am &#39;描述信息&#39;</code></pre>
+<h4 id="0.1.11">文件撤销操作</h4>
+<pre><code># 查看工作区和版本库里面最新版本的区别
+    $ git diff HEAD -- hello.py
+
+方式1：可以撤销未被追踪的文件
+
+# 丢弃工作区的修改
+    $ git checkout -- hello.py
+
+方式2：可以撤销到任意版本
+    # 查看操作日志
+    $ git log
+    commit c4e993ddb36d77710dad2c7c8c18130f9a761946 (HEAD -&gt; master)
+
+    $ git log --oneline
+    c4e993d (HEAD -&gt; master) first add
+
+
+
+    # 回退到某个版本2
+    $ git reset --hard c4e993ddb36d77710dad2c7c8c18130f9a761946
+
+
+    #回退到上一个版本
+    git reset HEAD</code></pre>
+
+<h4 id="0.1.12">分支定义</h4>
+<pre><code>分支可以理解成 独立开发功能的 小房间。</code></pre>
+<h4 id="0.1.13">分支操作</h4>
+<pre><code># 创建分支
+    $ git branch 分支名
+
+# 查看分支
+    $ git branch
+
+# 切换分支
+    $ git checkout 分支名
+
+# 创建+切换分支
+    $ git checkout -b 分支名
+
+# 合并某分支到当前分支
+    $ git merge 分支名
+
+# 删除某分支
+    $ git branch -d 分支名</code></pre>
+<h4 id="0.1.14">合并分支解决冲突</h4>
+<pre><code>当前分支1   分支2 前提分支1和分支2都进行了代码修改。
+
+将分支2的内容合并到分支1
+
+# 1. 切换到当前分支1
+    $ git checkout 分支1
+
+# 2. 和分支2进行合并
+    $ git merge 分支2
+
+# 3. 执行第二步后出现冲突（CONFLICT）
+    $ git merge dev
+    Auto-merging hello.py
+    CONFLICT (content): Merge conflict in hello.py
+    Automatic merge failed; fix conflicts and then commit the result.
+
+
+# 4. 解决方案：
+    print &#39;first&#39;
+    &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    print &#39;master second&#39;
+    =======
+    print &#39;dev second&#39;
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
+
+
+    1. 编辑合并分支1和分支2的内容
+    2. 修改好之后，$ git add 文件名
+    3. $ git commit -m &quot;描述信息&quot;</code></pre>
+
+<pre><code>Git是分布式版本控制系统，同一个Git仓库，可以分布到不同的机器上。
+github网站就是提供Git仓库托管服务的，所以，只要注册一个GitHub账号，就可以免费获得Git远程仓库。
+
+github官网：https://github.com/</code></pre>
+<h4 id="0.1.15">远程库</h4>
+<pre><code>1. github版本库即为远程库。</code></pre>
+<h4 id="0.1.16">本地库</h4>
+<pre><code>1. 本地创建的Git版本库即为本地库。</code></pre>
+<h4 id="0.1.17">使用说明</h4>
+<pre><code>1. 先在github官网中注册账户。
+2. 创建SSH key。
+    由于你的本地Git仓库和GitHub仓库之间的传输是通过SSH加密的。
+    Windows下打开Git Bash，创建SSH key。
+    $ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+
+3. 在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件（密钥对）。
+    用户主目录：C:\Users\Administrator
+
+4. 登陆GitHub，打开&quot;Account settings&quot;，&quot;SSH Keys&quot;页面。
+
+5. 点&quot;Add SSH Key&quot;，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</code></pre>
+<h4 id="0.1.18">本地库 关联 远程库</h4>
+<pre><code>origin:默认远程库名称</code></pre>
+<pre><code># 在本地库当前分支
+    $ git remote add origin git@github.com:pythonde/newRepository.git</code></pre>
+<h4 id="0.1.19">上传数据到远程库</h4>
+<pre><code>$ git push -u origin dev
+The authenticity of host &#39;github.com (13.250.177.223)&#39; can&#39;t be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added &#39;github.com,13.250.177.223&#39; (RSA) to the list of known hosts.
+To github.com:pythonde/newRepository.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to &#39;git@github.com:pythonde/newRepository.git&#39;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., &#39;git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+<h4 id="0.1.20">远程库更新本地库</h4>
+<pre><code>$ git pull --rebase origin dev
+
+From github.com:pythonde/newRepository
+ * branch            dev        -&gt; FETCH_HEAD
+First, rewinding head to replay your work on top of it...
+Applying: first add
+Applying: dev second
+Applying: test2 dev third</code></pre>
+<h4 id="0.1.21">成功将本地库内容上传到远程库</h4>
+<pre><code>$ git push -u origin dev
+
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 852 bytes | 852.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To github.com:pythonde/newRepository.git
+   a69bffd..da7dd11  dev -&gt; dev
+Branch &#39;dev&#39; set up to track remote branch &#39;dev&#39; from &#39;origin&#39;.</code></pre>
+<h4 id="0.1.22">注意事项</h4>
+<pre><code>1. 远程操作git push / git pull 时，本地库和远程库分支名相同。
+2. 第一次push时：$ git push -u origin dev
+3. 之后只需要简写：$ git push  origin dev
+4. 远程库分支之间的合并，创建一个pull request进行合并。</code></pre>
+<h4 id="0.1.23">查看远程库信息</h4>
+<pre><code>$ git remote -v </code></pre>
+<h4 id="0.1.24">删除连接远程库</h4>
+<pre><code>$ git remote rm origin</code></pre>
+<h4 id="0.1.25">从远程库下载源码到本地库</h4>
+<pre><code>$ git clone git@github.com:pythonde/newRepository.git</code></pre>
+
+<x-markdown src="section/9_Git多协议方式.md />
+<h4 id="0.1.26">多人协作开发实现步骤</h4>
+<pre><code>1. 由张三上传一个基本版本到张三的github远程库master上。
+
+2. 李四登录github账户访问remoteb版本库。fork  将张三的版本转载到李四的个人github中。
+
+3.李四：在github上新建一个分支dev  本地库中也得新建一个dev分支
+
+4.李四：将本地库的dev分支和远程库的dev分支进行关联</code></pre>
+<h4 id="0.1.27">本地库连接远程库</h4>
+<pre><code>1. github注册账户
+
+2. 创建远程版本库
+
+3. 本地库和远程库进行关联 </code></pre>
+<pre><code>git remote -v
+
+git remote add origin git@github.com:pythonde/remoteRepository.git</code></pre>
+<ol>
+<li>更新本地库
+```
+git pull --rebase origin master</li>
+</ol>
+<p>git status</p>
+<p>git add hello.py</p>
+<p>git commit -m &#39;描述信息&#39;</p>
+<pre><code>
+5.将本地库内容上传至远程库</code></pre>
+<p>git push -u origin master</p>
+<p>```</p>
+
+
+</article>
+<footer>
+<h3 id="0.2">开源协议</h3>
+<p>本程序基于MIT协议开源。</p>
+<pre><code>Copyright (c) 2010-2013 Alibaba.com, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</code></pre>
+
+</footer>
+</body>
+</html>
